@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Super Sprinter 3000</h1>
+    <a href="/add_story">Add new story</a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                {% for header in headers %}
+                <th scope="col">{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for story in stories %}
+            <tr>
+                <td>{{story.id}}</td>
+                <td><a href="/update_story/{{ story.id }}">{{story.title}}</a></td>
+                <td>{{story.user_story}}</td>
+                <td>{{story.acceptance_criteria}}</td>
+                <td>{{story.business_value}}</td>
+                <td>{{story.estimation}}</td>
+                <td>{{story.status}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

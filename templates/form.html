@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Form Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Add new story</h2>
+    <form action="/list" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title">
+        </div>
+        <div class="form-group">
+            <label for="user_story">Story</label>
+            <textarea name="user_story" id="user_story" cols="50" rows="4"></textarea>
+        </div>
+        <div class="form-group form-check">
+            <label for="acceptance_criteria">Acceptance Criteria</label>
+            <textarea name="acceptance_criteria" id="acceptance_criteria" cols="50" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="business_value">Business Value</label>
+            <input type="integer" class="form-control" name="business_value" id="business_value">
+        </div>
+        <div class="form-group">
+            <label for="estimation">Estimation</label>
+            <input type="integer" class="form-control" name="estimation" id="estimation">
+        </div>
+        <button type="submit" value="POST" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
